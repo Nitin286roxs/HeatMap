@@ -30,16 +30,9 @@ def heatmap(DIC,img_string,camid,height,width):
     I = img.reshape([height,width, 3])
     print(str(I.shape))
     print("height,width: "+str(height)+","+str(width))
-    ####################################
     ########### Normal Case# ###########
     narr=np.array(DIC)
     x,y=narr.T
-    ####################################
-    ######### Zero Person Case #########
-    #x,y=[-100],[-100]
-    ####################################
-    #logger.debug("X: "+str(x))
-    #logger.debug("y: "+str(y))
     img, extent = _plot_heatmap(x, y, 32,I.shape)
     fig = plt.figure(frameon=False)
     ax = plt.Axes(fig, [0., 0., 1., 1.])
